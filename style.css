@@ -1,0 +1,177 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  user-select: none;
+}
+
+/* Fundo elegante e dinâmico com gradiente animado */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(-45deg, #1a1c29, #10121a, #2a1b3d, #0d1b2a);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Container Glassmorphism com efeito de brilho suave */
+.calculator-card {
+  width: 100%;
+  max-width: 350px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 24px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Detalhe estilo janela de sistema no topo */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot.red { background-color: #ff5f56; }
+.dot.yellow { background-color: #ffbd2e; }
+.dot.green { background-color: #27c93f; }
+
+.brand-title {
+  margin-left: auto;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Área do Visor */
+.display-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 110px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  text-align: right;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#previous-op {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  font-weight: 400;
+  min-height: 1.2rem;
+  word-break: break-all;
+}
+
+#display {
+  width: 100%;
+  background: transparent;
+  color: #ffffff;
+  border: none;
+  font-size: 2.6rem;
+  font-weight: 700;
+  text-align: right;
+  outline: none;
+}
+
+/* Grade de Botões */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* Estilo base dos Botões */
+.btn {
+  height: 62px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 1.3rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Botões de Função (AC, +/-, %) */
+.btn-func {
+  background: rgba(255, 255, 255, 0.15);
+  color: #818cf8;
+}
+
+/* Botões de Operadores (+, -, *, /) */
+.btn-op {
+  background: rgba(129, 140, 248, 0.25);
+  color: #a5b4fc;
+  font-size: 1.5rem;
+}
+
+.btn-op:hover {
+  background: rgba(129, 140, 248, 0.4);
+}
+
+/* Botão de Igual (=) */
+.btn-equal {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+}
+
+.btn-equal:hover {
+  background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.6);
+}
+
+/* Botão Zero expandido */
+.btn-zero {
+  grid-column: span 2;
+  text-align: center;
+}
+
+/* Rodapé do Card */
+.card-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.card-footer p {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.5px;
+}
